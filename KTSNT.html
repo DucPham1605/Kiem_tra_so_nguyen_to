@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "Mess"></div>
+<script>
+    let string = "";
+    let mess = document.getElementById("Mess");
+
+    function isPrime(number) {
+        let flag = true;
+
+        if (number < 2){
+            flag = false;
+        }
+        else if (number == 2){
+            flag = true;
+        }
+        else if (number % 2 ==0) {
+            flag = false;
+        } else{
+            for (let i =3;i < Math.sqrt(number);i +=2) {
+                if (number % i == 0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        return flag;
+    }
+
+    for (i=0;i<=10000;i++){
+        if (isPrime(i)){
+            string += i + '<br>';
+        }
+    }
+    mess.innerHTML = string;
+</script>
+</body>
+</html>
